@@ -29,6 +29,8 @@ export function SidebarNav({ groups }: { groups: NavGroup[] }) {
                   <Link
                     href={href}
                     aria-current={active ? "page" : undefined}
+                    // Close the mobile "Browse items" disclosure after navigating.
+                    onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}
                     className={cn(
                       "block rounded-md px-2 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground",
                       active && "bg-muted font-medium text-foreground"

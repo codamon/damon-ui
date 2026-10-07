@@ -34,7 +34,7 @@ export default async function ItemPage({ params }: PageProps<"/docs/[name]">) {
   return (
     <article className="max-w-3xl">
       <header className="mb-8">
-        <div className="mb-2 flex items-center gap-2">
+        <div className="mb-2 flex flex-wrap items-center gap-2">
           <Badge variant="secondary">{item.type.replace("registry:", "")}</Badge>
           {item.registryDependencies?.map((dep) => (
             <Badge key={dep} variant="outline" className="font-mono">
