@@ -14,3 +14,7 @@ next-env.d.ts
 .DS_Store
 public/docs/
 app/tokens.css
+
+# machine-specific, never commit
+CLAUDE.local.md
+docs/private/

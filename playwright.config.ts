@@ -1,6 +1,10 @@
+import nextEnv from "@next/env"
 import { defineConfig, devices } from "@playwright/test"
 
-// Fixed project port. Reuses a running `pnpm dev`; otherwise serves the static export.
+// Same .env.local as Next (PLAYWRIGHT_BASE_URL, ALLOWED_DEV_ORIGINS).
+nextEnv.loadEnvConfig(process.cwd())
+
+// Fixed project port 3350. Reuses a running `pnpm dev`; otherwise serves the static export.
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:3350"
 
 export default defineConfig({
