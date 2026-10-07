@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "damon",
+  "homepage": "https://damon-ui.pages.dev",
+  "items": [
+    {
+      "name": "nz-money",
+      "type": "registry:lib",
+      "title": "NZ money",
+      "description": "Locale-proof NZD formatting with BigInt rounding: formatMoney, formatCents, toCents, moneyInputValue, formatPercent, formatBytes.",
+      "categories": ["lib"],
+      "files": [{ "path": "registry/damon/lib/nz-money.ts", "type": "registry:lib" }]
+    }
+  ]
+}
