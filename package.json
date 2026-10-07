@@ -12,7 +12,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "registry:build": "shadcn build && pnpm gen:llms",
+    "registry:build": "tsx scripts/sync-tokens.ts && shadcn build && pnpm gen:llms",
     "gen:llms": "tsx scripts/gen-llms.ts",
     "check:colours": "tsx scripts/check-raw-colours.ts",
     "check": "pnpm check:colours && pnpm typecheck && pnpm test && pnpm registry:build && pnpm build"

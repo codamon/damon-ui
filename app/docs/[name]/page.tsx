@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { CopyButton } from "@/components/docs/copy-button"
 import { DemoFrame } from "@/components/docs/demo-frame"
 import { Markdown } from "@/components/docs/markdown"
-import { demos } from "@/components/demos"
+import { demoPresets, demos } from "@/components/demos"
 import { Badge } from "@/components/ui/badge"
 import { readDoc } from "@/lib/docs"
 import { getItem, loadRegistry, SITE_URL } from "@/lib/registry"
@@ -63,7 +63,7 @@ export default async function ItemPage({ params }: PageProps<"/docs/[name]">) {
 
       {Demo && (
         <section aria-label="Demo" className="mb-10">
-          <DemoFrame name={name}>
+          <DemoFrame name={name} defaultPreset={demoPresets[name]}>
             <Demo />
           </DemoFrame>
         </section>

@@ -1,0 +1,264 @@
+/**
+ * The one place design tokens are defined.
+ *
+ * `scripts/sync-tokens.ts` writes these into:
+ *   - registry.json `cssVars` for theme items and for items that need extra tokens
+ *   - app/tokens.css for the docs site (presets scoped under [data-theme])
+ *
+ * Semantics follow shadcn: `accent` is the subtle hover surface, not a brand
+ * colour. Brand colour lives in `primary` (solid) and `brand` (highlights).
+ * Status tones (`success`, `warning`, `info`) are text-strength colours: use
+ * them as text on the page background, as a solid fill with `*-foreground`,
+ * or as a tint with `/10`. `destructive` is shadcn's own.
+ *
+ * Contrast is enforced by tests/lib/tokens.test.ts (WCAG AA, 4.5:1 for text).
+ */
+
+export type TokenMap = Record<string, string>
+
+export interface TokenSet {
+  /** Entries for `@theme inline` (Tailwind utilities). */
+  theme?: TokenMap
+  light: TokenMap
+  dark: TokenMap
+}
+
+/** success / warning / info. Defaults sit on shadcn's neutral base. */
+export const status: TokenSet = {
+  theme: {
+    "color-success": "var(--success)",
+    "color-success-foreground": "var(--success-foreground)",
+    "color-warning": "var(--warning)",
+    "color-warning-foreground": "var(--warning-foreground)",
+    "color-info": "var(--info)",
+    "color-info-foreground": "var(--info-foreground)",
+  },
+  light: {
+    success: "#176b45",
+    "success-foreground": "#ffffff",
+    warning: "#8a4b08",
+    "warning-foreground": "#ffffff",
+    info: "#1d4ed8",
+    "info-foreground": "#ffffff",
+  },
+  dark: {
+    success: "#7bcea3",
+    "success-foreground": "#0b1422",
+    warning: "#f4c36a",
+    "warning-foreground": "#0b1422",
+    info: "#8ab4ff",
+    "info-foreground": "#0b1422",
+  },
+}
+
+/**
+ * Brand + layered surfaces for marketing sections (heroes, CTA bands).
+ * Gradient fill: `bg-(image:--brand-gradient)`.
+ */
+export const surfaces: TokenSet = {
+  theme: {
+    "color-brand": "var(--brand)",
+    "color-brand-foreground": "var(--brand-foreground)",
+    "color-brand-2": "var(--brand-2)",
+    "color-surface-1": "var(--surface-1)",
+    "color-surface-2": "var(--surface-2)",
+    "color-surface-inverse": "var(--surface-inverse)",
+    "color-surface-inverse-foreground": "var(--surface-inverse-foreground)",
+  },
+  light: {
+    brand: "#4363d9",
+    "brand-foreground": "#ffffff",
+    "brand-2": "#6029ba",
+    "surface-1": "#f7f8fa",
+    "surface-2": "#eef0f4",
+    "surface-inverse": "#0e1a33",
+    "surface-inverse-foreground": "#f7f8fa",
+    "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))",
+  },
+  dark: {
+    brand: "#8b9fff",
+    "brand-foreground": "#0b1020",
+    "brand-2": "#b197fc",
+    "surface-1": "#12161f",
+    "surface-2": "#1a1f2b",
+    "surface-inverse": "#eef1f7",
+    "surface-inverse-foreground": "#0e1a33",
+    "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))",
+  },
+}
+
+/** Fluid display sizes: `text-display` for section titles, `text-hero` for the one big headline. */
+export const typeScale: TokenSet = {
+  theme: {
+    "text-display": "clamp(2rem, 4.5vw, 3.5rem)",
+    "text-display--line-height": "1.1",
+    "text-hero": "clamp(2.5rem, 7vw, 6rem)",
+    "text-hero--line-height": "1",
+  },
+  light: {},
+  dark: {},
+}
+
+/**
+ * Marketing preset. Ink-on-white with a blue/violet brand pair; dark mode is
+ * deep navy. Structure proven on two production marketing sites: surface
+ * layers and brand gradient from one, ink/paper pairing and fluid display type from the other.
+ */
+export const marketing: TokenSet = {
+  light: {
+    radius: "0.75rem",
+    background: "#ffffff",
+    foreground: "#0e1a33",
+    card: "#ffffff",
+    "card-foreground": "#0e1a33",
+    popover: "#ffffff",
+    "popover-foreground": "#0e1a33",
+    primary: "#4363d9",
+    "primary-foreground": "#ffffff",
+    secondary: "#eef0f4",
+    "secondary-foreground": "#0e1a33",
+    muted: "#f7f8fa",
+    "muted-foreground": "#566077",
+    accent: "#eef0f4",
+    "accent-foreground": "#0e1a33",
+    destructive: "#d92d20",
+    border: "#e3e6ec",
+    input: "#d5d9e2",
+    ring: "#4363d9",
+  },
+  dark: {
+    background: "#0b1020",
+    foreground: "#eef1f7",
+    card: "#121828",
+    "card-foreground": "#eef1f7",
+    popover: "#121828",
+    "popover-foreground": "#eef1f7",
+    primary: "#8b9fff",
+    "primary-foreground": "#0b1020",
+    secondary: "#1b2236",
+    "secondary-foreground": "#eef1f7",
+    muted: "#161c2c",
+    "muted-foreground": "#9aa3b8",
+    accent: "#1b2236",
+    "accent-foreground": "#eef1f7",
+    destructive: "#ff8a80",
+    border: "#252d42",
+    input: "#2f3850",
+    ring: "#8b9fff",
+  },
+}
+
+/**
+ * Admin preset. Warm ledger palette from a production admin panel: linen canvas, paper
+ * cards, ink primary button, terracotta reserved for brand/focus. Dense
+ * radius. Status tones tuned for the warm canvas.
+ */
+export const admin: TokenSet = {
+  light: {
+    radius: "0.5rem",
+    background: "#f2f0e9",
+    foreground: "#262923",
+    card: "#fffef9",
+    "card-foreground": "#262923",
+    popover: "#fffef9",
+    "popover-foreground": "#262923",
+    primary: "#262923",
+    "primary-foreground": "#fffef9",
+    secondary: "#e9e7df",
+    "secondary-foreground": "#262923",
+    muted: "#f7f6f0",
+    "muted-foreground": "#5f645b",
+    accent: "#eeece3",
+    "accent-foreground": "#262923",
+    destructive: "#a33b34",
+    border: "#d8d5ca",
+    input: "#b9b6ab",
+    ring: "#9e3d25",
+    brand: "#b6472a",
+    "brand-foreground": "#fffef9",
+    "brand-2": "#8b5b16",
+    "surface-1": "#f7f6f0",
+    "surface-2": "#eeece3",
+    "surface-inverse": "#262923",
+    "surface-inverse-foreground": "#fffef9",
+    success: "#356646",
+    "success-foreground": "#fffef9",
+    warning: "#7d5214",
+    "warning-foreground": "#fffef9",
+    info: "#2f6273",
+    "info-foreground": "#fffef9",
+    sidebar: "#e9e7df",
+    "sidebar-foreground": "#262923",
+    "sidebar-primary": "#262923",
+    "sidebar-primary-foreground": "#fffef9",
+    "sidebar-accent": "#dfddd3",
+    "sidebar-accent-foreground": "#262923",
+    "sidebar-border": "#d8d5ca",
+    "sidebar-ring": "#9e3d25",
+  },
+  dark: {
+    background: "#171916",
+    foreground: "#ecebe4",
+    card: "#1f221e",
+    "card-foreground": "#ecebe4",
+    popover: "#1f221e",
+    "popover-foreground": "#ecebe4",
+    primary: "#ecebe4",
+    "primary-foreground": "#171916",
+    secondary: "#2a2d28",
+    "secondary-foreground": "#ecebe4",
+    muted: "#232622",
+    "muted-foreground": "#a5a99f",
+    accent: "#2c2f2a",
+    "accent-foreground": "#ecebe4",
+    destructive: "#f0877d",
+    border: "#343832",
+    input: "#4a4e46",
+    ring: "#e0896f",
+    brand: "#e0896f",
+    "brand-foreground": "#171916",
+    "brand-2": "#e2b866",
+    "surface-1": "#1c1f1b",
+    "surface-2": "#232622",
+    "surface-inverse": "#ecebe4",
+    "surface-inverse-foreground": "#171916",
+    success: "#8cc79f",
+    "success-foreground": "#171916",
+    warning: "#e2b866",
+    "warning-foreground": "#171916",
+    info: "#8cc0d0",
+    "info-foreground": "#171916",
+    sidebar: "#1b1d1a",
+    "sidebar-foreground": "#ecebe4",
+    "sidebar-primary": "#ecebe4",
+    "sidebar-primary-foreground": "#171916",
+    "sidebar-accent": "#2a2d28",
+    "sidebar-accent-foreground": "#ecebe4",
+    "sidebar-border": "#343832",
+    "sidebar-ring": "#e0896f",
+  },
+}
+
+/** Merge token sets; later sets win. */
+export function mergeSets(...sets: TokenSet[]): TokenSet {
+  return {
+    theme: Object.assign({}, ...sets.map((s) => s.theme ?? {})),
+    light: Object.assign({}, ...sets.map((s) => s.light)),
+    dark: Object.assign({}, ...sets.map((s) => s.dark)),
+  }
+}
+
+/** Which registry items carry which tokens. Theme presets include the extras they override. */
+export const itemTokens: Record<string, TokenSet> = {
+  "theme-marketing": mergeSets(status, surfaces, typeScale, marketing),
+  "theme-admin": mergeSets(status, surfaces, admin),
+}
+
+/** Docs-site presets, scoped under [data-theme="<name>"]. */
+export const presets: Record<string, TokenSet> = {
+  marketing: itemTokens["theme-marketing"],
+  admin: itemTokens["theme-admin"],
+}
+
+/** Tokens every docs page needs on top of shadcn's neutral base. */
+export const docsBase: TokenSet = mergeSets(status, surfaces, typeScale)

@@ -10,11 +10,19 @@ const PRESETS = [
   { value: "admin", label: "Admin" },
 ] as const
 
-type Preset = (typeof PRESETS)[number]["value"]
+export type Preset = (typeof PRESETS)[number]["value"]
 
 /** Preview area. The preset switch scopes theme tokens to the demo only. */
-export function DemoFrame({ name, children }: { name: string; children: ReactNode }) {
-  const [preset, setPreset] = useState<Preset>("default")
+export function DemoFrame({
+  name,
+  defaultPreset = "default",
+  children,
+}: {
+  name: string
+  defaultPreset?: Preset
+  children: ReactNode
+}) {
+  const [preset, setPreset] = useState<Preset>(defaultPreset)
 
   return (
     <div className="overflow-hidden rounded-xl border">
