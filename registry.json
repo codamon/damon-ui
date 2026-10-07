@@ -227,6 +227,36 @@
           "type": "registry:lib"
         }
       ]
+    },
+    {
+      "name": "nz-date",
+      "type": "registry:lib",
+      "title": "NZ date",
+      "description": "Timezone-proof NZ dates: todayInNz, nzDateOf, addDays, differenceInDays, formatNzDate (7 Oct 2026), formatNzDateTime, nzTaxYear. No Date for calendar dates.",
+      "categories": [
+        "lib"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/lib/nz-date.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "gst",
+      "type": "registry:lib",
+      "title": "GST",
+      "description": "NZ GST maths with exact BigInt arithmetic (splitInclusive, gstFromInclusive, inclusiveFromExclusive, isGstConsistent) and IRD/GST number validation.",
+      "categories": [
+        "lib"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/lib/gst.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

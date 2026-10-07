@@ -58,3 +58,15 @@ export function Markdown({ children }: { children: string }) {
     </div>
   )
 }
+
+/** One paragraph of inline markdown (code, links, emphasis) without the wrapping <p>. */
+export function InlineMarkdown({ children }: { children: string }) {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{ ...components, p: ({ children }) => <>{children}</> }}
+    >
+      {children}
+    </ReactMarkdown>
+  )
+}

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 
 import { CopyButton } from "@/components/docs/copy-button"
 import { DemoFrame } from "@/components/docs/demo-frame"
-import { Markdown } from "@/components/docs/markdown"
+import { InlineMarkdown, Markdown } from "@/components/docs/markdown"
 import { demoPresets, demos } from "@/components/demos"
 import { Badge } from "@/components/ui/badge"
 import { readDoc } from "@/lib/docs"
@@ -43,7 +43,11 @@ export default async function ItemPage({ params }: PageProps<"/docs/[name]">) {
           ))}
         </div>
         <h1 className="text-3xl font-semibold tracking-tight">{doc.title}</h1>
-        {doc.lead && <p className="mt-3 text-lg text-muted-foreground">{doc.lead}</p>}
+        {doc.lead && (
+          <p className="mt-3 text-lg text-muted-foreground">
+            <InlineMarkdown>{doc.lead}</InlineMarkdown>
+          </p>
+        )}
       </header>
 
       <section aria-label="Install" className="mb-8 space-y-2">

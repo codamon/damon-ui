@@ -11,6 +11,6 @@ export default defineConfig({
     include: ["tests/**/*.test.{ts,tsx}"],
     environment: "node",
     // Keep date tests deterministic regardless of the host timezone.
-    env: { TZ: "UTC" },
+    env: { TZ: process.env.TZ ?? "UTC" },
   },
 })
