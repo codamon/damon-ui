@@ -4,7 +4,7 @@ import { ModeToggle } from "@/components/docs/mode-toggle"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
+    <header data-site-header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-6 px-4 md:px-6">
         <Link href="/" className="font-mono text-sm font-semibold tracking-tight">
           damon-ui

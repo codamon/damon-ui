@@ -497,6 +497,159 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "title": "Reveal",
+      "description": "Fade-and-rise on first scroll into view (IntersectionObserver, fires once). Respects reduced motion and never hides content when JS is off, without a noscript override.",
+      "categories": [
+        "ui",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "page-hero",
+      "type": "registry:block",
+      "title": "Page hero",
+      "description": "Marketing page opener: eyebrow, fluid text-hero/text-display title, intro, actions and optional media, with a staggered rise-in. Uses theme-marketing surface and type tokens.",
+      "categories": [
+        "block",
+        "marketing"
+      ],
+      "dependencies": [
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/blocks/page-hero.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)",
+          "color-brand-foreground": "var(--brand-foreground)",
+          "color-brand-2": "var(--brand-2)",
+          "color-surface-1": "var(--surface-1)",
+          "color-surface-2": "var(--surface-2)",
+          "color-surface-inverse": "var(--surface-inverse)",
+          "color-surface-inverse-foreground": "var(--surface-inverse-foreground)",
+          "text-display": "clamp(2rem, 4.5vw, 3.5rem)",
+          "text-display--line-height": "1.1",
+          "text-hero": "clamp(2.5rem, 7vw, 6rem)",
+          "text-hero--line-height": "1"
+        },
+        "light": {
+          "brand": "#4363d9",
+          "brand-foreground": "#ffffff",
+          "brand-2": "#6029ba",
+          "surface-1": "#f7f8fa",
+          "surface-2": "#eef0f4",
+          "surface-inverse": "#0e1a33",
+          "surface-inverse-foreground": "#f7f8fa",
+          "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))"
+        },
+        "dark": {
+          "brand": "#8b9fff",
+          "brand-foreground": "#0b1020",
+          "brand-2": "#b197fc",
+          "surface-1": "#12161f",
+          "surface-2": "#1a1f2b",
+          "surface-inverse": "#eef1f7",
+          "surface-inverse-foreground": "#0e1a33",
+          "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))"
+        }
+      }
+    },
+    {
+      "name": "cta-band",
+      "type": "registry:block",
+      "title": "CTA band",
+      "description": "Closing call-to-action section: big heading, primary and secondary actions, small print; inverse, brand-gradient or muted tone, optional background image with scrim.",
+      "categories": [
+        "block",
+        "marketing"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/blocks/cta-band.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "color-brand": "var(--brand)",
+          "color-brand-foreground": "var(--brand-foreground)",
+          "color-brand-2": "var(--brand-2)",
+          "color-surface-1": "var(--surface-1)",
+          "color-surface-2": "var(--surface-2)",
+          "color-surface-inverse": "var(--surface-inverse)",
+          "color-surface-inverse-foreground": "var(--surface-inverse-foreground)",
+          "text-display": "clamp(2rem, 4.5vw, 3.5rem)",
+          "text-display--line-height": "1.1",
+          "text-hero": "clamp(2.5rem, 7vw, 6rem)",
+          "text-hero--line-height": "1"
+        },
+        "light": {
+          "brand": "#4363d9",
+          "brand-foreground": "#ffffff",
+          "brand-2": "#6029ba",
+          "surface-1": "#f7f8fa",
+          "surface-2": "#eef0f4",
+          "surface-inverse": "#0e1a33",
+          "surface-inverse-foreground": "#f7f8fa",
+          "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))"
+        },
+        "dark": {
+          "brand": "#8b9fff",
+          "brand-foreground": "#0b1020",
+          "brand-2": "#b197fc",
+          "surface-1": "#12161f",
+          "surface-2": "#1a1f2b",
+          "surface-inverse": "#eef1f7",
+          "surface-inverse-foreground": "#0e1a33",
+          "brand-gradient": "linear-gradient(135deg, var(--brand), var(--brand-2))"
+        }
+      }
+    },
+    {
+      "name": "json-ld",
+      "type": "registry:lib",
+      "title": "JSON-LD",
+      "description": "Safe <JsonLd> script plus schema.org builders with stable @ids: organization, website, service, article, faqPage, jsonLdGraph. Escapes </script> and line separators.",
+      "categories": [
+        "lib",
+        "seo"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/lib/json-ld.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "seo",
+      "type": "registry:lib",
+      "title": "SEO metadata",
+      "description": "createSeo(config) → page(), article(), root() Next.js Metadata with canonical, Open Graph, Twitter and hreflang; plus truncate, plainText and hreflangAlternates.",
+      "categories": [
+        "lib",
+        "seo"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/lib/seo.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

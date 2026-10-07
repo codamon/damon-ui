@@ -120,7 +120,7 @@ function FilterSelect({ className, ...props }: React.ComponentProps<"select">) {
     <select
       data-slot="filter-select"
       className={cn(
-        "h-9 min-w-36 rounded-md border border-input bg-transparent px-2.5 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30",
+        "h-9 min-w-36 rounded-md border border-input bg-transparent px-2.5 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 dark:bg-input/30",
         className
       )}
       {...props}

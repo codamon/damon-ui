@@ -12,10 +12,10 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "registry:build": "tsx scripts/sync-tokens.ts && shadcn build && pnpm gen:llms",
+    "registry:build": "pnpm check:colours && tsx scripts/sync-tokens.ts && shadcn build && pnpm gen:llms",
     "gen:llms": "tsx scripts/gen-llms.ts",
     "check:colours": "tsx scripts/check-raw-colours.ts",
-    "check": "pnpm check:colours && pnpm typecheck && pnpm test && pnpm registry:build && pnpm build"
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm registry:build && pnpm build"
   },
   "packageManager": "pnpm@12.9.1",
   "dependencies": {

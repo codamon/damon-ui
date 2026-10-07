@@ -254,6 +254,8 @@ export const itemTokens: Record<string, TokenSet> = {
   "theme-admin": mergeSets(status, surfaces, admin),
   "status-badge": status,
   notice: status,
+  "page-hero": mergeSets(surfaces, typeScale),
+  "cta-band": mergeSets(surfaces, typeScale),
 }
 
 /** Docs-site presets, scoped under [data-theme="<name>"]. */
