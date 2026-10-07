@@ -426,6 +426,77 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data table",
+      "description": "Admin list table from plain column defs: client or URL-driven sorting, row selection with bulk-action bar, column visibility menu, empty and loading states. No table library. Built on shadcn Table.",
+      "categories": [
+        "ui",
+        "table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "table",
+        "checkbox",
+        "dropdown-menu",
+        "button",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "filter-bar",
+      "type": "registry:ui",
+      "title": "Filter bar",
+      "description": "List filters as a GET form (shareable URLs, works before hydration): FilterBar, FilterField, FilterSearch, FilterSelect, removable FilterChips, optional auto-submit and preserved params.",
+      "categories": [
+        "ui",
+        "table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/filter-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pager",
+      "type": "registry:ui",
+      "title": "Pager",
+      "description": "Pagination: numbered Pager (URL links or onPageChange, '21–40 of 312'), CursorPager for keyset pagination, plus pageRange and buildQuery helpers.",
+      "categories": [
+        "ui",
+        "table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/pager.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

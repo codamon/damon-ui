@@ -2,9 +2,12 @@ import type { ComponentType } from "react"
 
 import GstDemo from "./gst"
 import ConfirmDialogDemo from "./confirm-dialog"
+import DataTableDemo from "./data-table"
+import FilterBarDemo from "./filter-bar"
 import LabeledFieldDemo from "./labeled-field"
 import NoticeDemo from "./notice"
 import PageHeaderDemo from "./page-header"
+import PagerDemo from "./pager"
 import ResourceStateDemo from "./resource-state"
 import StatusBadgeDemo from "./status-badge"
 import NzDateDemo from "./nz-date"
@@ -24,6 +27,9 @@ export const demos: Record<string, ComponentType> = {
   "page-header": PageHeaderDemo,
   "resource-state": ResourceStateDemo,
   "confirm-dialog": ConfirmDialogDemo,
+  "data-table": DataTableDemo,
+  "filter-bar": FilterBarDemo,
+  pager: PagerDemo,
 }
 
 /** Preset the demo frame opens with (default: shadcn neutral). */
