@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+public/r/
+public/llms*.txt
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*
+!.env.example
+.wrangler/
+.DS_Store
