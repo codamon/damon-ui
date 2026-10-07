@@ -257,6 +257,175 @@
           "type": "registry:lib"
         }
       ]
+    },
+    {
+      "name": "labeled-field",
+      "type": "registry:ui",
+      "title": "Labeled field",
+      "description": "Label + control + description + error in one component, with id, htmlFor, aria-describedby, aria-invalid and aria-required wired automatically. Plus FieldRow and FormActions. Built on shadcn Field.",
+      "categories": [
+        "ui"
+      ],
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/labeled-field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "Status badge",
+      "description": "Status value → coloured dot (or tinted pill) + readable label. Ships a default status→tone map (paid, overdue, draft…) you can extend.",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/status-badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "color-success": "var(--success)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-info": "var(--info)",
+          "color-info-foreground": "var(--info-foreground)"
+        },
+        "light": {
+          "success": "#176b45",
+          "success-foreground": "#ffffff",
+          "warning": "#8a4b08",
+          "warning-foreground": "#ffffff",
+          "info": "#1d4ed8",
+          "info-foreground": "#ffffff"
+        },
+        "dark": {
+          "success": "#7bcea3",
+          "success-foreground": "#0b1422",
+          "warning": "#f4c36a",
+          "warning-foreground": "#0b1422",
+          "info": "#8ab4ff",
+          "info-foreground": "#0b1422"
+        }
+      }
+    },
+    {
+      "name": "notice",
+      "type": "registry:ui",
+      "title": "Notice",
+      "description": "Inline message with info / success / warning / danger tones, optional title and actions, and the right ARIA role per tone. Built on shadcn Alert.",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/notice.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "color-success": "var(--success)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-info": "var(--info)",
+          "color-info-foreground": "var(--info-foreground)"
+        },
+        "light": {
+          "success": "#176b45",
+          "success-foreground": "#ffffff",
+          "warning": "#8a4b08",
+          "warning-foreground": "#ffffff",
+          "info": "#1d4ed8",
+          "info-foreground": "#ffffff"
+        },
+        "dark": {
+          "success": "#7bcea3",
+          "success-foreground": "#0b1422",
+          "warning": "#f4c36a",
+          "warning-foreground": "#0b1422",
+          "info": "#8ab4ff",
+          "info-foreground": "#0b1422"
+        }
+      }
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page header",
+      "description": "App page title row: eyebrow (breadcrumb/back link), title with inline badge, description and right-aligned actions that wrap on mobile.",
+      "categories": [
+        "ui"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resource-state",
+      "type": "registry:ui",
+      "title": "Resource state",
+      "description": "Empty, error and loading states for lists and pages: EmptyState, ErrorState (retry + reference id), LoadingState (table/cards/list skeletons). Built on shadcn Empty and Skeleton.",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "empty",
+        "skeleton",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/resource-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:ui",
+      "title": "Confirm dialog",
+      "description": "Second confirmation for irreversible actions. Submits the enclosing form (server actions work) or runs an async onConfirm with pending and error states. Built on shadcn AlertDialog.",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/damon/ui/confirm-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

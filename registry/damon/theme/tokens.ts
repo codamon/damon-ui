@@ -252,6 +252,8 @@ export function mergeSets(...sets: TokenSet[]): TokenSet {
 export const itemTokens: Record<string, TokenSet> = {
   "theme-marketing": mergeSets(status, surfaces, typeScale, marketing),
   "theme-admin": mergeSets(status, surfaces, admin),
+  "status-badge": status,
+  notice: status,
 }
 
 /** Docs-site presets, scoped under [data-theme="<name>"]. */

@@ -15,7 +15,8 @@ for (const item of registry.items) {
     const errors: string[] = []
     page.on("pageerror", (err) => errors.push(err.message))
     await page.goto(`/docs/${item.name}`)
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible()
+    // Demos may render their own h1 (page-header), so scope to the article header.
+    await expect(page.locator("article > header h1")).toBeVisible()
     await expect(page.getByText(`npx shadcn add @damon/${item.name}`).first()).toBeVisible()
     await expect(page.getByRole("heading", { name: "When NOT to use" })).toBeVisible()
     expect(errors).toEqual([])
